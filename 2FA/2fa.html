@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación 2FA</title>
+    <link rel="stylesheet" href="2fa.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Club entre panas</h1>
+        
+        <form class="auth-container">
+            <h2>Introduce tu código</h2>
+            <p>Introduce tu código de 6 dígitos de la app de autenticación</p>
+            
+            <div class="code-inputs">
+                <input type="text" maxlength="1" class="code-input" data-index="0" inputmode="numeric">
+                <input type="text" maxlength="1" class="code-input" data-index="1" inputmode="numeric">
+                <input type="text" maxlength="1" class="code-input" data-index="2" inputmode="numeric">
+                <input type="text" maxlength="1" class="code-input" data-index="3" inputmode="numeric">
+                <input type="text" maxlength="1" class="code-input" data-index="4" inputmode="numeric">
+                <input type="text" maxlength="1" class="code-input" data-index="5" inputmode="numeric">
+            </div>
+            
+            <button id="continue-btn" disabled>Continuar</button>
+        </form>
+    </div>
+    
+    <script src="2fa.js"></script>
+</body>
+</html>

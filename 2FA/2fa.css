@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+    word-spacing: 0.2em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.auth-container {
+    background-color: rgba(20, 20, 20, 0.7);
+    border-radius: 15px;
+    padding: clamp(20px, 5vw, 30px);
+    border: 1px solid #333;
+}
+
+h2 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: #aaa;
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+    padding: 0 10px;
+}
+
+.code-inputs {
+    display: flex;
+    justify-content: center;
+    gap: clamp(4px, 1.5vw, 10px);
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+}
+
+.code-input {
+    width: clamp(35px, 12vw, 50px);
+    height: clamp(45px, 12vw, 60px);
+    border-radius: 10px;
+    border: 1px solid #555;
+    background-color: transparent;
+    color: white;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    text-align: center;
+    outline: none;
+}
+
+.code-input:focus {
+    border-color: #fff;
+}
+
+button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 30px;
+    padding: clamp(12px, 3vw, 15px) 0;
+    width: 100%;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Media queries para ajustes específicos */
+@media (max-width: 360px) {
+    .code-inputs {
+        gap: 3px;
+    }
+
+    .code-input {
+        width: 30px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.75rem;
+    }
+}
+
+/* Para pantallas extremadamente pequeñas como Galaxy Fold */
+@media (max-width: 280px) {
+    .code-inputs {
+        gap: 2px;
+    }
+
+    .code-input {
+        width: 25px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .auth-container {
+        padding: 15px 10px;
+    }
+}
+
+/* Ajustes para pantallas táctiles */
+@media (hover: none) {
+    .code-input {
+        font-size: 16px; /* Evita zoom en iOS */
+    }
+}
+
+/* Ajustes para orientación horizontal en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        padding: 5px;
+    }
+
+    h1 {
+        margin-bottom: 1rem;
+    }
+
+    .auth-container {
+        padding: 15px;
+    }
+
+    .code-inputs {
+        margin-bottom: 1rem;
+    }
+}
