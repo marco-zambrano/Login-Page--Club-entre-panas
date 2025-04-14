@@ -88,16 +88,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ code })  // puedes agregar más datos aquí si quieres
+                    body: JSON.stringify({ token: code })
             });
-
-            const result = await response.json();
-
-            if ( !response.ok) console.error("Error del servidor:", result);
-            
+            if(response.ok){
+                        window.location.href = "/ruta/secreta/secretisima/dashboard";
+            } else{
+                const errorText = await response.text();
+                console.error("Error del servidor:", errorText);
+                alert(errorText);
+            }
         } catch (error) {
             console.error("Error en la petición:", error);
-            alert("Error al verificar el código");
         }
 
         // Limpiar inputs
