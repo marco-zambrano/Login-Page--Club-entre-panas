@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     continueBtn.addEventListener("click", async (e) => {
         e.preventDefault();
 
+        const errorMessage = document.getElementById('error-message');
         const code = Array.from(inputs).map(input => input.value).join("");
 
         if (code.length !== 6) return;
@@ -91,14 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     body: JSON.stringify({ token: code })
             });
             if(response.ok){
-                        window.location.href = "/ruta/secreta/secretisima/dashboard";
+                window.location.href = "/ruta/secreta/secretisima/dashboard";
             } else{
-                const errorText = await response.text();
-                console.error("Error del servidor:", errorText);
-                alert(errorText);
+                errorMessage.textContent = 'El código de verificación no es correcto ';
+                errorMessage.classList.add('.show');
             }
         } catch (error) {
             console.error("Error en la petición:", error);
+            alert("Error en la petición:", error);
         }
 
         // Limpiar inputs

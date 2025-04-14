@@ -85,7 +85,7 @@ input:focus {
 }
 /* Error message */
 .error-message {
-    color: #fd5757;
+    color: #fd5757db;;
     text-align: center;
     margin-top: 15px;
     font-size: 0.9rem;
