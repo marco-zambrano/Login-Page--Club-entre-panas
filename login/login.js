@@ -19,8 +19,8 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
             errorMessage.classList.remove('.show');
             window.location.href = response.url;
         } else if (!response.ok) {
-            errorMessage.textContent = 'Usuario o contraseña incorrectos';
-            errorMessage.classList.add('.show');
+            errorMessage.textContent = await response.text();
+            errorMessage.classList.add('show');
         }
     } catch (error) {
         console.error('Error de red:', error);
