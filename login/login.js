@@ -6,7 +6,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     const errorMessage = document.getElementById('error-message');
 
     try {
-        const response = await fetch('https://zezenta.shop/ruta/secreta/secretisima/login', {
+        const response = await fetch('https://panasresponde.work/ruta/secreta/secretisima/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

