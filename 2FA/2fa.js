@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const index = Number.parseInt(this.dataset.index)
 
             // Only allow numbers
-            this.value = this.value.replace(/[^0-9]/g, "")
+            this.value = this.value.replace(/[^0-9]/g, "")  
 
             // Auto advance to next input
             if (this.value && index < inputs.length - 1) {
