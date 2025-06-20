@@ -22,12 +22,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    row-gap: 25px;
 }
-.container h2 {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
+.container .logo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
 .login-card {
     background-color: rgba(20, 20, 20, 0.7);
@@ -98,6 +97,10 @@ input:focus {
 
 /* Responsive styles */
 @media (max-width: 480px) {
+    .container .logo {
+        width: 150px;
+        height: 150px;
+    }
     .login-card {
         padding: 30px 20px;
     }
